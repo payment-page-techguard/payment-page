@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment – Invoice</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<div class="payment-container">
+
+    <h1>Payment Details</h1>
+
+    <!-- Invoice Summary -->
+
+    <div class="section">
+        <p><strong>Client:</strong> Jibu and Thomas Architects</p>
+        <p><strong>Invoice No:</strong> MRK-53</p>
+        <p><strong>Service:</strong> HTML & CSS Website Development</p>
+    </div>
+
+    <!-- Amount -->
+    <div class="payment-box">
+  <h3>Pay via UPI</h3>
+
+  <img src="qrcode.png" alt="Scan to Pay" width="220">
+
+  <p>
+    UPI ID:
+    <strong onclick="copyUPI()">pcpc80781@okicici</strong>
+  </p>
+
+  <small>
+    Scan the QR or enter the UPI ID manually in your UPI app.
+  </small>
+</div>
+
+<script>
+function copyUPI() {
+  navigator.clipboard.writeText("pcpc80781@okicici");
+  alert("UPI ID copied");
+}
+</script>
+
+
+    <!-- Terms & Conditions -->
+    <div class="section terms">
+        <h3>Terms & Conditions</h3>
+        <ul>
+            <li>This payment is for <strong>HTML & CSS frontend development only</strong>.</li>
+            <li>No backend, database, or server-side functionality included.</li>>
+            <li>Minor text or color changes are included.</li>
+            <li>Major design or structure changes will be charged additionally.</li>
+            <li>Payment once made is non-refundable.</li>
+        </ul>
+    </div>
+
+    <!-- Notes -->
+    <div class="section note">
+        <p>
+            After completing the payment, please share the payment confirmation
+            screenshot via WhatsApp or email.
+        </p>
+    </div>
+
+    <footer>
+        <p>© 2026 | Payment Reference Page</p>
+        <p>This page is for payment reference only.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
