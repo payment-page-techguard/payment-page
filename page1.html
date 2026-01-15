@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terms & Services – TechGuard Vision</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+    <h1>Terms & Services</h1>
+
+    <ul class="terms">
+        <li>Front-end website design & development</li>
+        <li>Delivery after client approval</li>
+        <li>No refunds once work is initiated</li>
+        <li>Minor revisions included</li>
+        <li>Invoice provided after payment confirmation</li>
+    </ul>
+
+    <label class="checkbox">
+        <input type="checkbox" id="accept">
+        I have read and agree to the terms
+    </label>
+
+    <button onclick="proceed()">Proceed to Payment</button>
+</div>
+
+<script>
+function proceed() {
+    if (!document.getElementById("accept").checked) {
+        alert("Please accept the terms and conditions");
+        return;
+    }
+    window.location.href = "page2.html";
+}
+</script>
+
+</body>
+</html>

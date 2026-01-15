@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment – TechGuard Vision</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+    <h1>Payment Details</h1>
+
+    <!-- QR Code -->
+    <img src="qrcode.png" alt="Scan to Pay" class="qr">
+
+    <!-- Payment Info -->
+    <div class="info">
+        <p><strong>Business Name:</strong> TechGuard Vision</p>
+        <p><strong>UPI ID:</strong> pcpc80781-1@okaxis</p>
+        <p><strong>Amount:</strong> ₹6,000</p>
+    </div>
+
+    <!-- Copy UPI -->
+    <span class="label">Copy UPI ID</span>
+    <div class="copy-row">
+        <input type="text" value="pcpc80781-1@okaxis" id="upi" readonly>
+        <button onclick="copyUPI()">Copy</button>
+    </div>
+
+    <!-- Upload Screenshot -->
+    <button class="="secondary" onclick="openForm()">
+        Upload Payment Screenshot
+    </button>
+
+    <!-- WhatsApp Button (hidden initially) -->
+    <button class="action-btn whatsapp-btn hidden" id="whatsappBtn"
+            onclick="sendWhatsApp()">
+        Send via WhatsApp
+    </button>
+
+    <!-- Download Invoice (hidden initially) -->
+    <button class="action-btn download-btn hidden" id="downloadBtn"
+            onclick="downloadInvoice()">
+        Download Invoice
+    </button>
+
+    <p class="note">
+        Please complete the payment, upload the screenshot, and send confirmation.
+    </p>
+
+</div>
+
+<script>
+/* Copy UPI */
+function copyUPI() {
+    const upi = document.getElementById("upi");
+    upi.select();
+    upi.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    alert("UPI ID copied to clipboard");
+}
+
+/* Upload Screenshot → show WhatsApp */
+function openForm() {
+    window.open("https://forms.gle/uSVGg9h6kxxQRxkC8", "_blank");
+
+    document.getElementById("whatsappBtn").classList.remove("hidden");
+}
+
+/* WhatsApp → show Download */
+function sendWhatsApp() {
+    const phoneNumber = "918943361339";
+    const message = encodeURIComponent(
+        "Hi, I have completed the payment. Please find the details."
+    );
+
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+
+    document.getElementById("downloadBtn").classList.remove("hidden");
+}
+
+/* Download Invoice */
+function downloadInvoice() {
+    window.location.href = "invoice.pdf";
+}
+</script>
+
+</body>
+</html>

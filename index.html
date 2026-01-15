@@ -2,85 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Payment – TechGuard Vision</title>
+    <title>Terms of Service – TechGuard Vision</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-<div>
-<div class="payment-card">
 
-    <h1>Payment Details</h1>
-    <p class="sub">Scan or use the UPI ID below to complete payment</p>
+<div class="tos-wrapper">
 
-    <!-- QR CODE -->
-    <div class="qr-box">
-        <img src="qrcode.png" alt="Scan to Pay">
+    <div class="tos-card">
+        <div class="tos-header">
+            <span class="tos-icon">📄</span>
+            <h2>Terms of Service</h2>
+        </div>
+
+        <ul class="tos-list">
+            <li>This payment covers <strong>HTML & CSS frontend development only</strong>.</li>
+            <li>Minor text or color changes are included after delivery.</li>
+            <li>Major changes or design editing will be charged separately.</li>
+            <li>Payment once made is <strong>non-refundable</strong>.</li>
+        </ul>
+
+        <label class="tos-check">
+            <input type="checkbox" id="agree">
+            <span>I have read and agree to the Terms of Service</span>
+        </label>
+
+        <button class="tos-btn" id="acceptBtn" disabled onclick="acceptTerms()">
+            Accept & Continue
+        </button>
     </div>
-
-    <!-- PAYMENT INFO -->
-    <div class="info">
-        <div class="row">
-            <span>Business Name</span>
-            <strong>TechGuard Vision</strong>
-        </div>
-
-        <div class="row">
-            <span>UPI ID</span>
-            <strong>pcpc80781-1@okaxis</strong>
-        </div>
-
-        <div class="row">
-            <span>Amount</span>
-            <strong>₹ 6000</strong>
-        </div>
-
-        <div class="row">
-            <span>Invoice No</span>
-            <strong>MRK-052</strong>
-        </div>
-    </div>
-
-    <!-- COPY BUTTON -->
-    <button onclick="copyUPI()">Copy UPI ID</button>
-
-    <p class="note">
-        After payment, please share the screenshot for confirmation.
-    </p>
 
 </div>
 
 <script>
-function copyUPI() {
-    const upiText = "pcpc80781-1@okaxis";
+const checkbox = document.getElementById("agree");
+const button = document.getElementById("acceptBtn");
 
-    // Create temporary input
-    const tempInput = document.createElement("input");
-    tempInput.value = upiText;
-    document.body.appendChild(tempInput);
+checkbox.addEventListener("change", () => {
+    button.disabled = !checkbox.checked;
+});
 
-    tempInput.select();
-    tempInput.setSelectionRange(0, 99999); // for mobile
-
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-
-    alert("UPI ID copied successfully");
+function acceptTerms() {
+    window.location.href = "page2.html";
 }
-
 </script>
 
-<p class="note">
-After opening the UPI app, choose “Pay by UPI ID” and paste the ID below:
-<strong>pcpc80781-1@okaxis</strong>
-</p>
-<a href="https://wa.me/918943361339?text=Hi%20TechGuard%20Vision,%0A%0AI%20have%20completed%20the%20payment.%20Please%20find%20the%20payment%20screenshot%20attached.%0A%0AInvoice%20No:%20TGV-102"
-   target="_blank"
-   class="whatsapp-btn">
-   Send Screenshot via WhatsApp
-</a>
-
-
-</div>
 </body>
 </html>

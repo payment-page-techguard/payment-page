@@ -1,140 +1,114 @@
+/* ===== RESET ===== */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", system-ui, sans-serif;
 }
 
+/* ===== PAGE ===== */
 body {
-    background: #0f0f0f;
+    background: linear-gradient(135deg, #eef2f7, #f8fafc);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
 }
 
-.payment-card {
+/* ===== CARD ===== */
+.card {
     width: 100%;
-    max-width: 380px;
-    background: #161616;
-    border-radius: 14px;
-    padding: 24px;
+    max-width: 440px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 26px;
     text-align: center;
-    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.payment-card h1 {
-    font-size: 22px;
-    margin-bottom: 6px;
+/* ===== HEADING ===== */
+.card h1 {
+    margin-bottom: 24px;
+    font-size: 24px;
 }
 
-.sub {
-    font-size: 13px;
-    color: #bbb;
-    margin-bottom: 20px;
-}
-
-.qr-box img {
-    width: 220px;
-    border-radius: 12px;
-    background: #fff;
+/* ===== QR ===== */
+.qr {
+    width: 190px;
+    margin: 0 auto 24px;
     padding: 10px;
-    margin-bottom: 20px;
+    background: #f1f5f9;
+    border-radius: 12px;
 }
 
+/* ===== INFO ===== */
 .info {
-    text-align: left;
-    margin-bottom: 20px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 22px;
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+.info p {
     font-size: 14px;
+    margin-bottom: 8px;
 }
 
-.row span {
-    color: #aaa;
+/* ===== COPY ROW ===== */
+.copy-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
 }
 
+.copy-row input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+}
+
+/* ===== BUTTONS ===== */
 button {
     width: 100%;
-    padding: 12px;
-    background: #1a73e8;
+    padding: 14px;
+    border-radius: 10px;
     border: none;
-    border-radius: 8px;
-    color: #fff;
     font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
 }
 
-button:hover {
-    background: #1558b0;
-}
-
-.note {
-    font-size: 12px;
-    color: #aaa;
+/* spacing between buttons */
+button + button {
     margin-top: 14px;
 }
-.upi-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-    margin-top: 12px;
-    background: #0f9d58;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 500;
+
+/* styles */
+.secondary {
+    background: #f1f5f9;
+    border: 1px solid #d1d5db;
 }
-.upi-btn:hover {
-    background: #0b8043;
-}
-.upi-open-btn {
-    display: block;
-    text-align: center;
-    padding: 14px;
-    background: #222;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 15px;
-    border: 1px solid #333;
-}
-.upi-open-btn:active {
-    background: #000;
-}
-.gpay-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 14px;
-    background: #0f9d58; /* Google Pay green */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
-}
-.gpay-btn:active {
-    background: #0b8043;
-}
+
 .whatsapp-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 14px;
-    margin-top: 12px;
-    background: #25D366; /* WhatsApp green */
+    background: #22c55e;
     color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
 }
-.whatsapp-btn:active {
-    background: #1da851;
+
+.download-btn {
+    background: #2563eb;
+    color: #fff;
+}
+
+/* ===== NOTE ===== */
+.note {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* ===== HIDDEN ===== */
+.hidden {
+    display: none;
 }
