@@ -26,11 +26,11 @@
     <span class="label">Copy UPI ID</span>
     <div class="copy-row">
         <input type="text" value="pcpc80781-1@okaxis" id="upi" readonly>
-        <button onclick="copyUPI()">Copy</button>
+        <button class="secondary" onclick="copyUPI()">Copy</button>
     </div>
 
     <!-- Upload Screenshot -->
-    <button class="="secondary" onclick="openForm()">
+    <button class="secondary" onclick="openForm()">
         Upload Payment Screenshot
     </button>
 
@@ -43,7 +43,7 @@
     <!-- Download Invoice (hidden initially) -->
     <button class="action-btn download-btn hidden" id="downloadBtn"
             onclick="downloadInvoice()">
-        Download Invoice
+        Download Bill
     </button>
 
     <p class="note">
@@ -83,7 +83,7 @@ function sendWhatsApp() {
 
 /* Download Invoice */
 function downloadInvoice() {
-    window.location.href = "invoice.pdf";
+    window.location.href = "bill.pdf";
 }
 </script>
 
