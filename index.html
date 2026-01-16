@@ -2,49 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Terms of Service – TechGuard Vision</title>
+    <title>Payment Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="tos-wrapper">
+<div class="payment-card">
 
-    <div class="tos-card">
-        <div class="tos-header">
-            <span class="tos-icon">📄</span>
-            <h2>Terms of Service</h2>
+    <h1>Payment Details</h1>
+    <p class="subtitle">Scan the QR or use UPI ID below</p>
+
+    <!-- QR Code -->
+    <div class="qr-box">
+        <img src="qrcode.png" alt="QR Code">
+    </div>
+
+    <!-- Details -->
+    <div class="details">
+        <div class="row">
+            <span>Name</span>
+            <strong>TechGuard Vision</strong>
         </div>
 
-        <ul class="tos-list">
-            <li>This payment covers <strong>HTML & CSS frontend development only</strong>.</li>
-            <li>Minor text or color changes are included after delivery.</li>
-            <li>Major changes or design editing will be charged separately.</li>
-            <li>Payment once made is <strong>non-refundable</strong>.</li>
-        </ul>
+        <div class="row">
+            <span>UPI ID</span>
+            <strong id="upiId">pcpc80781-1@okaxis</strong>
+        </div>
 
-        <label class="tos-check">
-            <input type="checkbox" id="agree">
-            <span>I have read and agree to the Terms of Service</span>
-        </label>
-
-        <button class="tos-btn" id="acceptBtn" disabled onclick="acceptTerms()">
-            Accept & Continue
-        </button>
+        <div class="row">
+            <span>Amount</span>
+            <strong>₹ 6,000</strong>
+        </div>
     </div>
+
+    <!-- Buttons -->
+    <button onclick="copyUPI()">Copy UPI ID</button>
+    <a href="invoice.pdf" download class="download-btn">Download Invoice</a>
 
 </div>
 
 <script>
-const checkbox = document.getElementById("agree");
-const button = document.getElementById("acceptBtn");
-
-checkbox.addEventListener("change", () => {
-    button.disabled = !checkbox.checked;
-});
-
-function acceptTerms() {
-    window.location.href = "page2.html";
+function copyUPI() {
+    const upi = document.getElementById("upiId").innerText;
+    navigator.clipboard.writeText(upi);
+    alert("UPI ID copied: " + upi);
 }
 </script>
 
