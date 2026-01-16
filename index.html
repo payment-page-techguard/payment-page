@@ -11,42 +11,58 @@
 <div class="payment-card">
 
     <h1>Payment Details</h1>
-    <p class="subtitle">Scan the QR or use UPI ID below</p>
+    <p class="subtitle">Scan the QR or use bank details below</p>
 
     <!-- QR Code -->
     <div class="qr-box">
         <img src="qrcode.png" alt="QR Code">
     </div>
 
-    <!-- Details -->
+    <!-- Payment Details -->
     <div class="details">
+
         <div class="row">
             <span>Name</span>
             <strong>TechGuard Vision</strong>
         </div>
 
         <div class="row">
-            <span>UPI ID</span>
-            <strong id="upiId">pcpc80781-1@okaxis</strong>
-        </div>
-
-        <div class="row">
             <span>Amount</span>
             <strong>₹ 6,000</strong>
         </div>
+
+        <div class="row">
+            <span>Account No</span>
+            <strong id="accountNo">99980110826315</strong>
+        </div>
+
+        <div class="row">
+            <span>IFSC Code</span>
+            <strong id="ifscCode">FDRL0001102</strong>
+        </div>
+
+        
+
+        <!-- Copy buttons (same line) -->
+        <div class="row copy-actions">
+            <button onclick="copyText('accountNo')">Copy Account No</button>
+            <button onclick="copyText('ifscCode')">Copy IFSC</button>
+        </div>
+
+        
+
     </div>
 
-    <!-- Buttons -->
-    <button onclick="copyUPI()">Copy UPI ID</button>
+    <!-- Invoice -->
     <a href="bill.pdf" download class="download-btn">Download Invoice</a>
 
 </div>
 
 <script>
-function copyUPI() {
-    const upi = document.getElementById("upiId").innerText;
-    navigator.clipboard.writeText(upi);
-    alert("UPI ID copied: " + upi);
+function copyText(id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text);
+    alert(text + " copied successfully");
 }
 </script>
 
